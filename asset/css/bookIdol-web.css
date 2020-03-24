@@ -138,7 +138,7 @@ small {
     height: 150vh;
     /* background-color: black; */
     background-repeat: no-repeat;
-    /* background-size: 100% 150vh; */
+    background-size: 100% 150vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
