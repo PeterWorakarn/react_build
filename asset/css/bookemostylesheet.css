@@ -238,7 +238,8 @@ strong,
 small,
 a,
 p,
-button {
+button,
+cite {
     font-family: 'Kanit';
 }
 
@@ -292,6 +293,9 @@ h3 {
     border-radius: 8px;
     border: none;
     background-color: var(--link);
+}
+.card cite {
+    color: var(--small-text);
 }
 
 @media screen and (max-width: 1020px) {

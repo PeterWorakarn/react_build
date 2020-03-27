@@ -48,7 +48,6 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: black;
     color: #fff;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -84,9 +83,23 @@ body {
     z-index: -1; */
 }
 
+.headline {
+    position: absolute;
+    top: 290px;
+    left: 20vw;
+    text-align: center;
+    z-index: 50 !important;
+}
+
+.headline header {
+    font-family: 'Kanit';
+    font-size: 100pt;
+}
+
 .first-section {
     padding: 50px 227px;
     height: 100vh;
+    max-height: 900px;
     background-color: #000;
 }
 
@@ -129,7 +142,7 @@ small {
     /* width: 100vw; or we should not set width at all?
     max-width: 100vw; */
     width: 100%;
-    height: 130vh;
+    height: auto;
     /* background-color: black; */
     background-repeat: no-repeat;
     /* background-size: 100% 150vh; */
@@ -145,6 +158,8 @@ small {
     grid-template-areas:
         "content dashboard";
     overflow-y: unset;
+    padding-bottom: 20px;
+    padding-top: 20px;
 
 }
 
@@ -168,12 +183,18 @@ small {
 
 /* TWITTER DASHBOARD */
 .container-dashboard {
-    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-mobile {
+    display: none;
 }
 
 .dashboard {
     grid-area: dashboard;
-    width: 300px;
+    width: 270px;
     height: 400px;
     background-color: #E4E4E4;
     padding: 16px;
@@ -204,6 +225,7 @@ small {
 
 .dashboard .tagbox {
     height: 180px;
+    width: 100%;
 }
 
 
@@ -282,6 +304,7 @@ small {
     box-shadow: 0 5px 10pt rgba(0, 0, 0, .28);
     height: auto;
     width: auto;
+    max-width: 714px;
     transition: .2s;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -292,6 +315,13 @@ small {
     /* position: absolute;
     left: 200px;
     top: 2500px; */
+}
+
+.figure-content {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .card .figure {
@@ -313,12 +343,20 @@ small {
 
 .card-content .link-group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     text-align: center;
 }
 
-.controlbtn {
+.controlbtn-l {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: var(--sp-24);
+}
+
+.controlbtn-r {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     padding-bottom: var(--sp-24);
 }
@@ -367,38 +405,229 @@ small {
     }
 }
 
+.mobile-screen {
+    display: none;
+}
+
+@media screen and (min-width: 2500px) {
+    .first-section {
+        padding: 50px 600px;
+    }
+
+    .web-room {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 1020px) {
     body {
-        background-color: black;
-
+        background-color: #B9B9B9;
     }
 
-    .jumptomobile {
-        padding: 20px;
-        background-color: #FFC80B;
-
+    .headline {
         position: absolute;
-        top: 120px;
-        padding: 30px;
-        display: unset;
+        width: 90%;
+        top: 100px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: red; */
         text-align: center;
+        z-index: 50 !important;
+        padding: 0px 10px;
     }
 
-    .jumptomobile h1 {
-        color: white;
+    .headline header {
         font-family: 'Kanit';
-        font-size: 16pt;
-        margin-bottom: 5px
+        font-size: 65pt;
     }
 
-    .jumptomobile a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #22a2f0;
+    .first-section {
+        padding: 50px 30px;
     }
 
-    .websiteContent {
+    .first-section h1 {
+        font-size: var(--typo-24);
+
+    }
+
+    .first-section p {
+        font-size: var(--typo-16);
+    }
+
+    .web-room {
         display: none;
     }
 
+    .mobile-screen {
+        display: unset;
+
+
+    }
+
+    .controlbtn_mobile {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+
+    .prev_mobile,
+    .next_mobile {
+        cursor: pointer;
+        color: #707070;
+        background-color: white;
+        border-radius: 4px;
+        user-select: none;
+        padding: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .card_mobile {
+        /* background-color: #E4E4E4;
+        color: #130d0a;
+        border-radius: 16px;
+        box-shadow: 0 5px 10pt rgba(0, 0, 0, .28);
+        height: auto;
+        width: auto;
+        transition: .2s;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        text-align: center; */
+    }
+
+    .card_content_mobile {
+        border-radius: var(--sp-12);
+        padding: var(--sp-16);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 10px 10px 5px;
+    }
+
+    .card_image_mobile {
+        padding: 10px 10px 0 10px;
+        border-radius: var(--sp-12) var(--sp-12) 0 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .card_image_mobile img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card_image_mobile .figure_mobile {
+        justify-self: end;
+
+    }
+
+    .figure_mobile {
+        width: 100%;
+        height: auto;
+    }
+
+    .card_content_main {
+        width: 100%;
+        background-color: #E4E4E4;
+        padding: 16px;
+        text-align: center;
+        border-radius: 0 0 var(--sp-12) var(--sp-12);
+
+    }
+
+    .card_content .link-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+
+    .card_content_mobile h1 {
+        color: var(--text);
+        font-size: 16pt;
+    }
+
+    .card_content_mobile h4 {
+        color: var(--text);
+        font-size: 12pt;
+    }
+
+    .card_content_mobile p {
+        font-size: 10pt;
+        margin-bottom: 16px;
+        color: #130d0a;
+        font-weight: light;
+
+    }
+
+    .card_content_mobile cite {
+        color: #130d0a;
+        font-weight: bold;
+        font-size: 10pt;
+    }
+
+    .card_content_mobile .link {
+        text-decoration: none;
+        color: var(--bg-w);
+        background-color: var(--accent);
+        padding: 5px 15px;
+        border-radius: 12px;
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+
+    .card_content_mobile .linkCTA {
+        text-decoration: none;
+        color: var(--accent);
+        background-color: transparent;
+        padding: 5px 15px;
+        border: 1px solid var(--accent);
+        border-radius: var(--sp-12);
+        margin-top: var(--sp-16);
+        margin-right: var(--sp-16);
+
+    }
+
+    .card_content_tweet_mobile {
+        padding: var(--sp-16);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 10px 10px 5px;
+        border-radius: var(--sp-12);
+        color: var(--text);
+
+    }
+    .card_content_main_tweet {
+        width: 100%;
+        background-color: #E4E4E4;
+        padding: 16px;
+        text-align: center;
+        border-radius: var(--sp-12);
+    }
+    .tweet-button {
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        padding: .4em;
+        background-color: #22a2f0;
+        color: white;
+        border-radius: 8px;
+    }
 }
+
+/* @media screen and (max-width: 690px) {
+ 
+
+} */
