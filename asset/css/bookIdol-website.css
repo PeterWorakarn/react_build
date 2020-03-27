@@ -98,8 +98,7 @@ body {
 
 .first-section {
     padding: 50px 227px;
-    height: 100vh;
-    max-height: 900px;
+    height: auto;
     background-color: #000;
 }
 
@@ -137,7 +136,9 @@ small {
     min-height: 800px;
 }
 
-
+#hero {
+    background-color:black;
+}
 .web-room {
     /* width: 100vw; or we should not set width at all?
     max-width: 100vw; */
@@ -422,7 +423,8 @@ small {
 
 @media screen and (max-width: 1020px) {
     body {
-        background-color: #B9B9B9;
+        background-color: black;
+        /* background-color: #B9B9B9; */
     }
 
     .headline {
@@ -463,10 +465,13 @@ small {
 
     .mobile-screen {
         display: unset;
-
-
     }
-
+    .mobile-room {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        align-items: center;
+    }
     .controlbtn_mobile {
         display: flex;
         justify-content: flex-end;
@@ -481,10 +486,13 @@ small {
         border-radius: 4px;
         user-select: none;
         padding: 10px;
-        margin-left: 30px;
-        margin-right: 30px;
     }
-
+    .prev_mobile {
+        margin-left: 5px;
+    }
+    .next_mobile {
+        margin-right: 5px;
+    }
     .card_mobile {
         /* background-color: #E4E4E4;
         color: #130d0a;
@@ -503,13 +511,17 @@ small {
     }
 
     .card_content_mobile {
+        /* width: 100%; */
         border-radius: var(--sp-12);
-        padding: var(--sp-16);
+        /* padding: var(--sp-16); */
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin: 10px 10px 10px 5px;
+        margin: 10px 10px 10px 10px;
+        /* background-color: #B9B9B9; */
+        /* background-color: red; */
+
     }
 
     .card_image_mobile {
@@ -525,10 +537,10 @@ small {
         height: auto;
     }
 
-    .card_image_mobile .figure_mobile {
+    /* .card_image_mobile .figure_mobile {
         justify-self: end;
 
-    }
+    } */
 
     .figure_mobile {
         width: 100%;
@@ -583,6 +595,7 @@ small {
         border-radius: 12px;
         margin-top: 16px;
         margin-right: 16px;
+        white-space: nowrap;
     }
 
     .card_content_mobile .linkCTA {
@@ -594,6 +607,7 @@ small {
         border-radius: var(--sp-12);
         margin-top: var(--sp-16);
         margin-right: var(--sp-16);
+        white-space: nowrap;
 
     }
 
@@ -624,6 +638,9 @@ small {
         background-color: #22a2f0;
         color: white;
         border-radius: 8px;
+    }
+    .tagbox_mobile {
+        width: 100%;
     }
 }
 
