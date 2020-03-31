@@ -416,14 +416,17 @@ small {
     display: none;
 }
 
-@media screen and (min-width: 2500px) {
+@media screen and (min-width: 2000px) {
     .first-section {
         padding: 50px 600px;
     }
 
     .web-room {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items:center;
+        justify-content: center;
+        /* text-align: center; */
     }
     .controlbtn-l {
         margin-top: 0;
@@ -432,6 +435,7 @@ small {
         justify-content: flex-start;
     }
     .controlbtn-r {
+        margin-left: 10px;
         margin-top: 0;
         display: flex;
         align-items: center;
